@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app = "app3">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  </head>
+  <body>
+  
+ Buscar: <input type="search" ng-model="busca">
+  
+<div ng-controller="CtrlLista">
+	<ul>
+		<li ng-repeat="pessoa in pessoas | filter:busca">
+			{{pessoa.nome}}, {{pessoa.cidade}}
+		</li>	
+	</ul>
+	
+	<div>
+		Nome: <input type="text" ng-model="vNome">
+		<br/>
+		Cidade: <input type="text" ng-model="vCidade">
+		<br/>
+		<button ng-click="adicionar()">Adicionar a Lista</button>
+	</div>
+	
+</div>
+	
+<script>
+	var myApp3 = angular.module('app3', []);
+	
+	var CtrlLista = function($scope){
+		$scope.pessoas = [
+			{nome: "Maria", cidade: "São Paulo"},
+			{nome: "João", cidade: "São Jose dos Pinhais"},
+			{nome: "Tico", cidade: "Curitiba"},
+			{nome: "Marta", cidade: "Belo Horizonte"},
+			{nome: "Pedro", cidade: "Pirapora"},
+			{nome: "Carla", cidade: "Maceio"},
+		];
+		
+		$scope.adicionar = function(){
+			$scope.pessoas.push({
+				nome: $scope.vNome,
+				cidade: $scope.vCidade
+			});
+			$scope.vNome = '';
+			$scope.vCidade = '';
+		};
+	};
+	
+	myApp3.controller('CtrlLista', CtrlLista);
+</script>
+
+  </body>
+</html>

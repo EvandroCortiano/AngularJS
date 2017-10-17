@@ -1,17 +1,21 @@
-<!doctype html>
-<html ng-app>
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-  </head>
-  <body>
-    <div>
-      <label>Primeiro nome:</label>
-      <input type="text" ng-model="firstName">
+<!DOCTYPE html>
+<html ng-app="pessoas">
+<head>
+	<title>Pessoas</title>
+</head>
+<body>
 
-      <label>Ultimo nome:</label>
-      <input type="text" ng-model="lastName">
-      <hr>
-      <h1>Hello {{firstName}} {{lastName}}!</h1>
-    </div>
-  </body>
+<div ng-controller="CtrlPessoas">
+	<h1>Sistema de gerenciamento de pessoas</h1>
+
+	<div ng-view></div>
+
+</div>
+
+</body>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+<script src="pessoas.js"></script>
+
 </html>

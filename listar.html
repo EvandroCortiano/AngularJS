@@ -1,0 +1,14 @@
+<h2>Listagem de Pessoas</h2>
+
+<ul>
+	<li ng-repeat="pessoa in pessoas">
+		<a href="#/pessoa/{{$index}}">{{pessoa.nome}},{{pessoa.cidade}}</a>
+	</li>
+</ul>
+
+<br/>
+<br/>
+
+<a href="#/pessoa/adicionar">Adicionar Nova Pessoa</a>
+
+<!-- Falta criar o deletar - desafio curso  -->

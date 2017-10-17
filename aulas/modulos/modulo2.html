@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="appMod1">
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+
+<b>Dependency Injection</b><br/><br/>
+
+	<div ng-controller="CtrlModulo">
+		Meu nome é {{ nome }}
+	</div>
+	
+<script>
+	angular.module('appMod1', [])
+	.controller('CtrlModulo', ['$scope',  function(s){
+		s.nome = "Evandro";
+	}]);
+	
+</script>
+
+</body>
+</html>
